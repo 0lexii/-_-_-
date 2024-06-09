@@ -181,19 +181,6 @@ def create_register_ui(parent):
     register_button = ctk.CTkButton(master=parent, text="Зареєструватись", command=lambda: print("Register clicked"))
     register_button.pack(pady=12, padx=10)
 
-    # Завантаження іконки Google з обробкою помилок
-    try:
-        google_image = Image.open("google.png")
-        google_image = google_image.resize((20, 20), Image.Resampling.LANCZOS)
-        google_icon = ImageTk.PhotoImage(google_image)
-
-        google_button = ctk.CTkButton(master=parent, image=google_icon, text="Зареєструватись з Google",
-                                      compound="left",
-                                      command=lambda: print("Google Register clicked"))
-        google_button.pack(pady=12, padx=10)
-    except FileNotFoundError:
-        print("Google icon file not found. Please check the file path.")
-
 
 # Функція для обробки входу
 def handle_login(email_entry, password_entry, login_window):
